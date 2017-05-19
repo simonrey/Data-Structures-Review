@@ -4,17 +4,9 @@ public class Node{
 	private Node prvNode;
 	private Node nextNode;
 
-	public Node(String name, int data, Node prvTop){
+	public Node(String name, int data){
 		this.name = name;
 		this.data = data;
-		this.prvNode = prvTop;
-	}
-
-	public Node(String name, int data, Node prvNode, Node nextNode){
-		this.name = name;
-		this.data = data;
-		this.prvNode = prvNode;
-		this.nextNode = nextNode;
 	}
 
 	public String getName(){

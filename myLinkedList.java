@@ -29,13 +29,15 @@ public class myLinkedList{
 			newNode.setPrevious(tail);
 			tail = newNode;
 		}
+		size++;
 	}
 
 	public Node removeNode(String name, Node theNode){
 		if(name == theNode.getName()){
 			theNode.getPreviousNode().setNext(head.getNextNode());
 			theNode.getNextNode().setPrevious(head.getPreviousNode());
-			return head;
+			size--;
+			return theNode;
 		}
 		if(theNode == null){
 			return null;
@@ -43,6 +45,18 @@ public class myLinkedList{
 		else{
 			return removeNode(name, head.getNextNode());
 		}
+	}
+
+	public Node findNode(String name, Node theNode){
+		if(name == theNode.getName()){
+			return theNode;
+		}
+		if(theNode == null){
+			return null;
+		}
+		else{
+			return findNode(name, theNode.getNextNode());
+		} 
 	}
 
 

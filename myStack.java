@@ -17,7 +17,8 @@ public class myStack{
 	}
 
 	public void push(String name, int data){
-		Node newNode = new Node(name, data, top);
+		Node newNode = new Node(name, data);
+		newNode.setPrevious(top);
 		this.top = newNode;
 		size ++;
 	}
